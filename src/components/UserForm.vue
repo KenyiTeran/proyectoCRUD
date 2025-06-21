@@ -50,13 +50,10 @@ const userData = ref({
   phone: ''
 })
 
-// Observar cambios en props.user
 watch(() => props.user, (newVal) => {
   if (newVal) {
-    // Si estamos editando, copiar los datos
     userData.value = { ...newVal }
   } else {
-    // Si estamos creando nuevo, limpiar el form
     userData.value = {
       name: '',
       username: '',
@@ -67,11 +64,9 @@ watch(() => props.user, (newVal) => {
 }, { immediate: true })
 
 function onSubmit() {
-  // Crear una copia de los datos para evitar mutaciones
   const userToSave = { ...userData.value }
 
   if (props.user && props.user.id) {
-    // Asegurar que mantenemos el ID al editar
     userToSave.id = props.user.id
     usersStore.updateUser(userToSave)
   } else {
