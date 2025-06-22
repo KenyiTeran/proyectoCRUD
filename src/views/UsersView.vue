@@ -11,7 +11,7 @@
 
           <button
             @click="showForm = true"
-            class="bg-yellow-500 hover:bg-yellow-600 text-white px-6 py-2 rounded-lg shadow-sm transition-colors duration-200 flex items-center space-x-2 font-medium"
+            class="bg-yellow-500 hover:bg-yellow-600 text-white px-6 py-2 rounded-lg shadow-sm transition-colors duration-200 flex items-center space-x-2 font-medium cursor-pointer"
           >
             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path
@@ -37,7 +37,7 @@
     <!-- Modal -->
     <div
       v-if="showForm"
-      class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50"
+      class="fixed inset-0 flex items-center justify-center bg-black/50 z-50"
     >
       <div class="bg-white w-full max-w-lg p-6 rounded-lg shadow-xl">
         <h2 class="text-xl font-semibold mb-4 text-gray-800">
@@ -54,7 +54,7 @@ import { ref, onMounted } from 'vue'
 import { useUsersStore } from '@/stores/users'
 import UserForm from '@/components/UserForm.vue'
 import UserTable from '@/components/UserTable.vue'
-import Sidebar from '@/components/Sidebar.vue'
+import Sidebar from '@/components/SidebarPanel.vue'
 
 const showForm = ref(false)
 const selectedUser = ref(null)

@@ -33,7 +33,7 @@
       <div>Acciones</div>
     </div>
 
-    <!-- Lista de usuarios -->
+    <!-- Lista de usuarios como tarjetas -->
     <div class="space-y-3 mt-1">
       <div
         v-for="user in usersStore.users"
@@ -48,13 +48,13 @@
         <div class="flex justify-between">
           <button
             @click="$emit('edit', user)"
-            class="bg-yellow-500 hover:bg-[#E59D00] text-white w-21 py-2 rounded"
+            class="bg-yellow-500 hover:bg-[#E59D00] text-white w-25 py-2 rounded cursor-pointer"
           >
             Editar
           </button>
           <button
             @click="confirmDelete(user.id)"
-            class="bg-red-500 hover:bg-red-600 text-white w-21 py-2 rounded"
+            class="bg-red-500 hover:bg-red-600 text-white w-25 py-2 rounded cursor-pointer"
           >
             Eliminar
           </button>
